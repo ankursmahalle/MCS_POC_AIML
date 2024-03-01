@@ -1,0 +1,52 @@
+
+
+ <title>Hello World!</title>
+    <!-- linking to PyScript assets -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  </head>
+<!--  <body>
+  &lt;!&ndash; Put Python code inside the the <py-script> tag &ndash;&gt;
+     <py-env>
+    - numpy
+    - matplotlib
+  </py-env>
+  <button onclick="runCode()">Get Data</button>
+  <script>
+      fuction runCode(){
+  <py-script>
+import numpy as np
+import matplotlib.pyplot as plt
+arr = np.array([1, 2, 3, 4, 5])
+plt.plot(arr)
+plt
+  </py-script>
+      }
+  </script>
+
+</body>-->
+ <body>
+    <form action="/predictions">
+        <input type="submit">
+        <div id="showFormData"></div>
+        <div>
+            {%if ctrsuccess %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tbody>
+                    {%for ctrrow in ctrsuccess %} <tr>
+
+                        <td>{{ ctrrow['Pregnancies'] }}</td>
+                        <td>{{ ctrrow['Glucose'] }}</td>
+                         <td>{{ ctrrow['Insulin'] }}</td>
+                        <td>{{ ctrrow['Age'] }}</td>
+
+                    </tr> {%endfor%}
+                    </tbody> </table>
+            </div>
+            {%endif%}
+
+        </div>
+    </form>
+ </body>
+</html>
